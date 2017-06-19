@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC")
   end
   def show
-
+    @comments = Comment.where(post_id: @post)
 
   end
   def new
